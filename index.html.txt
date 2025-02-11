@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Automotiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Estética Automotiva</h1>
+        <nav>
+            <ul>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="pacotes">
+        <h2>Nossos Pacotes</h2>
+        <div class="pacote">
+            <h3>Lavagem Simples</h3>
+            <p>Inclui lavagem externa e aspiração interna.</p>
+            <p><strong>R$ 50,00</strong></p>
+        </div>
+        <div class="pacote">
+            <h3>Lavagem Completa</h3>
+            <p>Inclui lavagem externa, aspiração, enceramento e higienização.</p>
+            <p><strong>R$ 120,00</strong></p>
+        </div>
+    </section>
+    
+    <section id="contato">
+        <h2>Agende um Serviço</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <section id="chat">
+        <h2>Atendimento Online</h2>
+        <div id="chat-box">
+            <p>Bem-vindo! Como podemos ajudar você?</p>
+        </div>
+        <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+        <button onclick="enviarMensagem()">Enviar</button>
+    </section>
+    
+    <a href="https://wa.me/seunumerodetelefone" class="whatsapp">Fale Conosco no WhatsApp</a>
+    
+    <script>
+        function enviarMensagem() {
+            let input = document.getElementById("chat-input");
+            let chatBox = document.getElementById("chat-box");
+            if (input.value.trim() !== "") {
+                let mensagem = document.createElement("p");
+                mensagem.textContent = "Você: " + input.value;
+                chatBox.appendChild(mensagem);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
